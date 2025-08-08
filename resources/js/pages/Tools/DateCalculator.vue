@@ -40,6 +40,18 @@
             </div>
         </header>
 
+        <!-- Tools Subnav -->
+        <nav class="border-b bg-background/80 backdrop-blur supports-[backdrop-filter]:bg-background/60">
+          <div class="container mx-auto px-4">
+            <div class="flex items-center gap-2 overflow-x-auto py-3">
+              <Link href="/tools/qr" class="px-4 py-2 rounded-full text-sm font-medium transition-all whitespace-nowrap" :class="isActive('/tools/qr') ? 'bg-gradient-to-r from-blue-500 to-purple-600 text-white shadow' : 'bg-muted text-foreground hover:bg-muted/80'">Generador QR</Link>
+              <Link href="/tools/bmi" class="px-4 py-2 rounded-full text-sm font-medium transition-all whitespace-nowrap" :class="isActive('/tools/bmi') ? 'bg-gradient-to-r from-green-500 to-blue-600 text-white shadow' : 'bg-muted text-foreground hover:bg-muted/80'">Calculadora IMC</Link>
+              <Link href="/tools/date-calculator" class="px-4 py-2 rounded-full text-sm font-medium transition-all whitespace-nowrap" :class="isActive('/tools/date-calculator') ? 'bg-gradient-to-r from-orange-500 to-pink-600 text-white shadow' : 'bg-muted text-foreground hover:bg-muted/80'">Calculadora de Fechas</Link>
+              <Link href="/tools/password-generator" class="px-4 py-2 rounded-full text-sm font-medium transition-all whitespace-nowrap" :class="isActive('/tools/password-generator') ? 'bg-gradient-to-r from-purple-500 to-red-600 text-white shadow' : 'bg-muted text-foreground hover:bg-muted/80'">Generador de Contraseñas</Link>
+            </div>
+          </div>
+        </nav>
+
     <!-- Hero Section -->
     <section class="relative overflow-hidden bg-gradient-to-br from-orange-50 via-pink-50 to-purple-50 dark:from-gray-900 dark:via-purple-900/20 dark:to-pink-900/20">
       <div class="absolute inset-0 bg-grid-black/[0.02] -z-10"></div>
@@ -301,6 +313,9 @@ const result = ref<{
   totalSeconds: number
   detailedBreakdown: string
 } | null>(null)
+
+// Helpers
+const isActive = (path: string) => typeof window !== 'undefined' && window.location.pathname.startsWith(path)
 
 // Methods
 const calculateDifference = () => {
