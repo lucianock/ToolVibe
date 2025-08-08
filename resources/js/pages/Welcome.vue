@@ -415,7 +415,7 @@ defineProps<{
                         Todos los derechos reservados.
                     </p>
                 </div>
-            </div>
+        </div>
         </footer>
     </div>
 </template>

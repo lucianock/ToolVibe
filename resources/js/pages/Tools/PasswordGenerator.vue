@@ -40,6 +40,27 @@
             </div>
         </header>
 
+    <!-- Hero Section -->
+    <section class="relative overflow-hidden bg-gradient-to-br from-purple-50 via-red-50 to-pink-50 dark:from-gray-900 dark:via-purple-900/20 dark:to-red-900/20">
+      <div class="absolute inset-0 bg-grid-black/[0.02] -z-10"></div>
+      <div class="relative py-14">
+        <div class="container mx-auto px-4">
+          <div class="text-center max-w-3xl mx-auto">
+            <div class="inline-flex items-center rounded-full px-3 py-1 text-sm bg-gradient-to-r from-purple-100 to-red-100 text-purple-800 dark:from-purple-900/50 dark:to-red-900/50 dark:text-purple-300 mb-6 border border-purple-200/50">
+              Generador de Contraseñas
+            </div>
+            <h1 class="text-4xl lg:text-5xl font-bold mb-4 leading-tight">
+              <span class="bg-gradient-to-r from-purple-600 via-pink-600 to-red-600 bg-clip-text text-transparent">Contraseñas Ultra Seguras</span>
+              <br />en un clic y a tu medida
+            </h1>
+            <p class="text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
+              Crea contraseñas robustas con longitud, símbolos, números y mayúsculas personalizadas.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <!-- Main Content -->
     <main class="container mx-auto px-4 py-8">
       <!-- SEO Content -->
@@ -53,7 +74,7 @@
 
       <div class="grid lg:grid-cols-2 gap-8">
         <!-- Generator Form -->
-        <Card>
+        <Card class="relative bg-white dark:bg-gray-800 border-0 shadow-xl rounded-3xl overflow-hidden">
           <CardHeader>
             <CardTitle>Configurar Contraseña</CardTitle>
             <CardDescription>
@@ -138,7 +159,7 @@
                 </div>
               </div>
 
-              <Button @click="generatePassword" class="w-full">
+              <Button @click="generatePassword" class="w-full bg-gradient-to-r from-purple-500 to-red-600 hover:from-purple-600 hover:to-red-700 text-white border-0 rounded-xl py-3 font-semibold shadow-lg hover:shadow-xl transition-all">
                 Generar Nueva Contraseña
               </Button>
             </div>
@@ -148,7 +169,7 @@
         <!-- Generated Password -->
         <div class="space-y-6">
           <!-- Password Display -->
-          <Card>
+          <Card class="relative bg-white dark:bg-gray-800 border-0 shadow-xl rounded-3xl overflow-hidden">
             <CardHeader>
               <CardTitle>Tu Contraseña Generada</CardTitle>
             </CardHeader>
@@ -191,7 +212,7 @@
           </Card>
 
           <!-- Strength Indicator -->
-          <Card v-if="generatedPassword">
+          <Card v-if="generatedPassword" class="relative bg-white dark:bg-gray-800 border-0 shadow-xl rounded-3xl overflow-hidden">
             <CardHeader>
               <CardTitle>Fortaleza de la Contraseña</CardTitle>
             </CardHeader>
@@ -217,7 +238,7 @@
           </Card>
 
           <!-- Quick Actions -->
-          <Card>
+          <Card class="relative bg-white dark:bg-gray-800 border-0 shadow-xl rounded-3xl overflow-hidden">
             <CardHeader>
               <CardTitle>Configuraciones Rápidas</CardTitle>
             </CardHeader>
@@ -240,7 +261,7 @@
           </Card>
 
           <!-- Instructions -->
-          <Card>
+          <Card class="relative bg-white dark:bg-gray-800 border-0 shadow-xl rounded-3xl overflow-hidden">
             <CardHeader>
               <CardTitle>Consejos de Seguridad</CardTitle>
             </CardHeader>

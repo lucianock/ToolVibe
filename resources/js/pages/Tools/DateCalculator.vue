@@ -40,6 +40,27 @@
             </div>
         </header>
 
+    <!-- Hero Section -->
+    <section class="relative overflow-hidden bg-gradient-to-br from-orange-50 via-pink-50 to-purple-50 dark:from-gray-900 dark:via-purple-900/20 dark:to-pink-900/20">
+      <div class="absolute inset-0 bg-grid-black/[0.02] -z-10"></div>
+      <div class="relative py-14">
+        <div class="container mx-auto px-4">
+          <div class="text-center max-w-3xl mx-auto">
+            <div class="inline-flex items-center rounded-full px-3 py-1 text-sm bg-gradient-to-r from-orange-100 to-pink-100 text-orange-800 dark:from-orange-900/50 dark:to-pink-900/50 dark:text-orange-300 mb-6 border border-orange-200/50">
+              Calculadora de Fechas
+            </div>
+            <h1 class="text-4xl lg:text-5xl font-bold mb-4 leading-tight">
+              <span class="bg-gradient-to-r from-orange-600 via-pink-600 to-purple-600 bg-clip-text text-transparent">Diferencia entre Fechas</span>
+              <br />con desglose completo
+            </h1>
+            <p class="text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
+              Calcula días, semanas, meses y años entre dos fechas específicas.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <!-- Main Content -->
     <main class="container mx-auto px-4 py-8">
       <!-- SEO Content -->
@@ -53,7 +74,7 @@
 
       <div class="grid lg:grid-cols-2 gap-8">
         <!-- Calculator Form -->
-        <Card>
+        <Card class="relative bg-white dark:bg-gray-800 border-0 shadow-xl rounded-3xl overflow-hidden">
           <CardHeader>
             <CardTitle>Calcular Diferencia de Fechas</CardTitle>
             <CardDescription>
@@ -85,7 +106,7 @@
               </div>
 
               <div class="flex space-x-2">
-                <Button @click="calculateDifference" class="flex-1">
+                <Button @click="calculateDifference" class="flex-1 bg-gradient-to-r from-orange-500 to-pink-600 hover:from-orange-600 hover:to-pink-700 text-white border-0 rounded-xl py-3 font-semibold shadow-lg hover:shadow-xl transition-all">
                   Calcular Diferencia
                 </Button>
                 <Button @click="swapDates" variant="outline" class="px-3">
@@ -108,7 +129,7 @@
         <!-- Results -->
         <div class="space-y-6">
           <!-- Calculation Result -->
-          <Card v-if="result">
+          <Card v-if="result" class="relative bg-white dark:bg-gray-800 border-0 shadow-xl rounded-3xl overflow-hidden">
             <CardHeader>
               <CardTitle>Resultado del Cálculo</CardTitle>
             </CardHeader>
@@ -153,7 +174,7 @@
           </Card>
 
           <!-- Quick Actions -->
-          <Card>
+          <Card class="relative bg-white dark:bg-gray-800 border-0 shadow-xl rounded-3xl overflow-hidden">
             <CardHeader>
               <CardTitle>Acciones Rápidas</CardTitle>
             </CardHeader>
@@ -176,7 +197,7 @@
           </Card>
 
           <!-- Instructions -->
-          <Card>
+          <Card class="relative bg-white dark:bg-gray-800 border-0 shadow-xl rounded-3xl overflow-hidden">
             <CardHeader>
               <CardTitle>¿Cómo usar la calculadora?</CardTitle>
             </CardHeader>

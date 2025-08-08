@@ -40,6 +40,31 @@
             </div>
         </header>
 
+    <!-- Hero Section -->
+    <section class="relative overflow-hidden bg-gradient-to-br from-blue-50 via-purple-50 to-pink-50 dark:from-gray-900 dark:via-blue-900/20 dark:to-purple-900/20">
+      <div class="absolute inset-0 bg-grid-black/[0.02] -z-10"></div>
+      <div class="absolute top-0 -left-4 w-72 h-72 bg-purple-300 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-blob"></div>
+      <div class="absolute top-0 -right-4 w-72 h-72 bg-yellow-300 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-blob animation-delay-2000"></div>
+      <div class="absolute -bottom-8 left-20 w-72 h-72 bg-pink-300 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-blob animation-delay-4000"></div>
+
+      <div class="relative py-14">
+        <div class="container mx-auto px-4">
+          <div class="text-center max-w-3xl mx-auto">
+            <div class="inline-flex items-center rounded-full px-3 py-1 text-sm bg-gradient-to-r from-blue-100 to-purple-100 text-blue-800 dark:from-blue-900/50 dark:to-purple-900/50 dark:text-blue-300 mb-6 border border-blue-200/50">
+              Generador de Códigos QR
+            </div>
+            <h1 class="text-4xl lg:text-5xl font-bold mb-4 leading-tight">
+              <span class="bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 bg-clip-text text-transparent">Crea Códigos QR</span>
+              <br />en segundos y en alta calidad
+            </h1>
+            <p class="text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
+              Convierte URLs, textos, WiFi y más en códigos QR listos para descargar en PNG.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <!-- Main Content -->
     <main class="container mx-auto px-4 py-8">
       <!-- SEO Content -->
@@ -53,7 +78,7 @@
 
       <div class="grid lg:grid-cols-2 gap-8">
         <!-- Generator Form -->
-        <Card>
+        <Card class="relative bg-white dark:bg-gray-800 border-0 shadow-xl rounded-3xl overflow-hidden">
           <CardHeader>
             <CardTitle>Crear Código QR</CardTitle>
             <CardDescription>
@@ -91,7 +116,7 @@
                 </select>
               </div>
 
-              <Button type="submit" :disabled="loading" class="w-full">
+              <Button type="submit" :disabled="loading" class="w-full bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 text-white border-0 rounded-xl py-3 font-semibold shadow-lg hover:shadow-xl transition-all">
                 <span v-if="loading">Generando...</span>
                 <span v-else>Generar y Descargar QR</span>
               </Button>
@@ -102,7 +127,7 @@
         <!-- Preview and Information -->
         <div class="space-y-6">
           <!-- QR Preview -->
-          <Card v-if="previewUrl">
+          <Card v-if="previewUrl" class="relative bg-white dark:bg-gray-800 border-0 shadow-xl rounded-3xl overflow-hidden">
             <CardHeader>
               <CardTitle>Vista Previa</CardTitle>
             </CardHeader>
@@ -112,7 +137,7 @@
           </Card>
 
           <!-- Instructions -->
-          <Card>
+          <Card class="relative bg-white dark:bg-gray-800 border-0 shadow-xl rounded-3xl overflow-hidden">
             <CardHeader>
               <CardTitle>¿Cómo usar el generador de QR?</CardTitle>
             </CardHeader>
@@ -133,7 +158,7 @@
           </Card>
 
           <!-- Examples -->
-          <Card>
+          <Card class="relative bg-white dark:bg-gray-800 border-0 shadow-xl rounded-3xl overflow-hidden">
             <CardHeader>
               <CardTitle>Ejemplos de uso</CardTitle>
             </CardHeader>
@@ -180,10 +205,40 @@
     </main>
 
     <!-- Footer -->
-    <footer class="border-t mt-16">
-      <div class="container mx-auto px-4 py-8">
-        <div class="text-center text-muted-foreground">
-          <p>&copy; 2024 ToolVibe. Herramientas online gratuitas para todos.</p>
+    <footer class="bg-gradient-to-br from-gray-900 via-blue-900 to-purple-900 text-white mt-16">
+      <div class="container mx-auto px-4 py-12">
+        <div class="grid md:grid-cols-4 gap-8">
+          <div class="md:col-span-2">
+            <div class="flex items-center space-x-2 mb-4">
+              <div class="w-8 h-8 bg-gradient-to-br from-blue-400 to-purple-500 rounded-lg flex items-center justify-center">
+                <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M13 10V3L4 14h7v7l9-11h-7z"/>
+                </svg>
+              </div>
+              <h3 class="text-xl font-bold bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">ToolVibe</h3>
+            </div>
+            <p class="text-gray-300 leading-relaxed mb-6">La suite de herramientas online más completa y gratuita. Potencia tu productividad con nuestras utilidades profesionales.</p>
+          </div>
+          <div>
+            <h4 class="text-lg font-semibold mb-4">Herramientas</h4>
+            <ul class="space-y-2">
+              <li><Link href="/tools/qr" class="text-gray-300 hover:text-white transition-colors">Generador QR</Link></li>
+              <li><Link href="/tools/bmi" class="text-gray-300 hover:text-white transition-colors">Calculadora IMC</Link></li>
+              <li><Link href="/tools/date-calculator" class="text-gray-300 hover:text-white transition-colors">Calculadora Fechas</Link></li>
+              <li><Link href="/tools/password-generator" class="text-gray-300 hover:text-white transition-colors">Generador Contraseñas</Link></li>
+            </ul>
+          </div>
+          <div>
+            <h4 class="text-lg font-semibold mb-4">Enlaces</h4>
+            <ul class="space-y-2">
+              <li><a href="/" class="text-gray-300 hover:text-white transition-colors">Inicio</a></li>
+              <li><a href="#" class="text-gray-300 hover:text-white transition-colors">Características</a></li>
+              <li><a href="/sitemap.xml" class="text-gray-300 hover:text-white transition-colors">Sitemap</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="border-top border-white/10 mt-8 pt-8 text-center">
+          <p class="text-gray-300">&copy; 2024 <span class="font-semibold">ToolVibe</span>. Todos los derechos reservados.</p>
         </div>
       </div>
     </footer>

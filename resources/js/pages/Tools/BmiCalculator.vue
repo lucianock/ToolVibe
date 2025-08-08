@@ -40,6 +40,27 @@
             </div>
         </header>
 
+    <!-- Hero Section -->
+    <section class="relative overflow-hidden bg-gradient-to-br from-green-50 via-blue-50 to-purple-50 dark:from-gray-900 dark:via-blue-900/20 dark:to-purple-900/20">
+      <div class="absolute inset-0 bg-grid-black/[0.02] -z-10"></div>
+      <div class="relative py-14">
+        <div class="container mx-auto px-4">
+          <div class="text-center max-w-3xl mx-auto">
+            <div class="inline-flex items-center rounded-full px-3 py-1 text-sm bg-gradient-to-r from-green-100 to-blue-100 text-green-800 dark:from-green-900/50 dark:to-blue-900/50 dark:text-green-300 mb-6 border border-green-200/50">
+              Calculadora de IMC
+            </div>
+            <h1 class="text-4xl lg:text-5xl font-bold mb-4 leading-tight">
+              <span class="bg-gradient-to-r from-green-600 via-blue-600 to-purple-600 bg-clip-text text-transparent">Conoce tu IMC</span>
+              <br />de forma rápida y precisa
+            </h1>
+            <p class="text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
+              Calcula tu Índice de Masa Corporal y conoce tu categoría de salud de inmediato.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <!-- Main Content -->
     <main class="container mx-auto px-4 py-8">
       <!-- SEO Content -->
@@ -53,7 +74,7 @@
 
       <div class="grid lg:grid-cols-2 gap-8">
         <!-- Calculator Form -->
-        <Card>
+        <Card class="relative bg-white dark:bg-gray-800 border-0 shadow-xl rounded-3xl overflow-hidden">
           <CardHeader>
             <CardTitle>Calcular IMC</CardTitle>
             <CardDescription>
@@ -122,7 +143,7 @@
                 </div>
               </div>
 
-              <Button type="submit" class="w-full">
+              <Button type="submit" class="w-full bg-gradient-to-r from-green-500 to-blue-600 hover:from-green-600 hover:to-blue-700 text-white border-0 rounded-xl py-3 font-semibold shadow-lg hover:shadow-xl transition-all">
                 Calcular IMC
               </Button>
             </form>
@@ -132,7 +153,7 @@
         <!-- Results -->
         <div class="space-y-6">
           <!-- BMI Result -->
-          <Card v-if="result">
+          <Card v-if="result" class="relative bg-white dark:bg-gray-800 border-0 shadow-xl rounded-3xl overflow-hidden">
             <CardHeader>
               <CardTitle>Tu Resultado</CardTitle>
             </CardHeader>
@@ -152,7 +173,7 @@
           </Card>
 
           <!-- BMI Categories -->
-          <Card>
+          <Card class="relative bg-white dark:bg-gray-800 border-0 shadow-xl rounded-3xl overflow-hidden">
             <CardHeader>
               <CardTitle>Categorías del IMC</CardTitle>
             </CardHeader>
@@ -179,7 +200,7 @@
           </Card>
 
           <!-- Instructions -->
-          <Card>
+          <Card class="relative bg-white dark:bg-gray-800 border-0 shadow-xl rounded-3xl overflow-hidden">
             <CardHeader>
               <CardTitle>¿Cómo usar la calculadora?</CardTitle>
             </CardHeader>
