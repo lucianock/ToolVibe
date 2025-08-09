@@ -315,7 +315,8 @@ const generateQR = async () => {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
-        'Accept': 'image/png',
+        'Accept': 'image/png, image/svg+xml, application/json',
+        'X-Requested-With': 'XMLHttpRequest',
         'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]')?.getAttribute('content') || ''
       },
       credentials: 'include',
@@ -335,14 +336,25 @@ const generateQR = async () => {
       // Download the file
       const a = document.createElement('a')
       a.href = url
-      a.download = 'qr-code.png'
+      // Try to derive filename from headers; fallback by content type
+      const contentDisposition = response.headers.get('Content-Disposition') || ''
+      const cdMatch = contentDisposition.match(/filename="?([^";]+)"?/i)
+      const contentType = response.headers.get('Content-Type') || ''
+      let filename = cdMatch ? cdMatch[1] : `qr-code.${contentType.includes('svg') ? 'svg' : 'png'}`
+      a.download = filename
       document.body.appendChild(a)
       a.click()
       document.body.removeChild(a)
     } else {
       try {
-        const errorData = await response.json()
-        errors.value = errorData.errors || { text: 'Error al generar el código QR' }
+        const contentType = response.headers.get('Content-Type') || ''
+        if (contentType.includes('application/json')) {
+          const errorData = await response.json()
+          errors.value = errorData.errors || { text: errorData.message || 'Error al generar el código QR' }
+        } else {
+          const text = await response.text()
+          errors.value = { text: text || 'No se pudo generar el código QR' }
+        }
       } catch (e) {
         errors.value = { text: 'No se pudo generar el código QR (respuesta no válida)' }
       }

@@ -30,14 +30,36 @@ class QrGeneratorController extends Controller
         ]);
 
         $text = $request->input('text');
-        $size = $request->input('size', 300);
+        $size = (int) $request->input('size', 300);
 
-        $qrCode = QrCode::format('png')
-                       ->size($size)
-                       ->generate($text);
+        try {
+            // Intentar generar PNG (requiere GD/Imagick)
+            $qrPng = QrCode::format('png')
+                ->size($size)
+                ->generate($text);
 
-        return response($qrCode)
-            ->header('Content-Type', 'image/png')
-            ->header('Content-Disposition', 'attachment; filename="qr-code.png"');
+            return response($qrPng)
+                ->header('Content-Type', 'image/png')
+                ->header('Content-Disposition', 'attachment; filename="qr-code.png"');
+        } catch (\Throwable $e) {
+            // Fallback a SVG (no requiere extensiones de imagen)
+            try {
+                $qrSvg = QrCode::format('svg')
+                    ->size($size)
+                    ->generate($text);
+
+                return response($qrSvg)
+                    ->header('Content-Type', 'image/svg+xml')
+                    ->header('Content-Disposition', 'attachment; filename="qr-code.svg"');
+            } catch (\Throwable $e2) {
+                // Respuesta de error en JSON para peticiones AJAX
+                return response()->json([
+                    'message' => 'No se pudo generar el código QR',
+                    'errors' => [
+                        'text' => 'No se pudo generar el código QR. Inténtalo de nuevo más tarde.'
+                    ],
+                ], 422);
+            }
+        }
     }
 }
