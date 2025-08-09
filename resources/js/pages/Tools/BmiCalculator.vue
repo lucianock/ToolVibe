@@ -1,88 +1,8 @@
 <template>
-  <div class="min-h-screen bg-background">
-            <!-- Header -->
-        <header class="sticky top-0 z-50 w-full border-b bg-background/80 backdrop-blur-md supports-[backdrop-filter]:bg-background/60">
-            <div class="container mx-auto px-4 py-4">
-                <div class="flex items-center justify-between">
-                    <Link href="/" class="flex items-center space-x-3">
-                        <!-- Logo mejorado -->
-                        <div class="flex items-center space-x-2">
-                            <div class="relative">
-                                <div class="w-8 h-8 bg-gradient-to-br from-blue-500 via-purple-600 to-pink-500 rounded-lg flex items-center justify-center shadow-lg">
-                                    <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M13 10V3L4 14h7v7l9-11h-7z"/>
-                                    </svg>
-                                </div>
-                            </div>
-                            <div>
-                                <h1 class="text-xl font-bold bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 bg-clip-text text-transparent">
-                                    ToolVibe
-                                </h1>
-                                <p class="text-xs text-muted-foreground -mt-1">Calculadora IMC</p>
-                            </div>
-                        </div>
-                    </Link>
-                    <nav class="hidden md:flex items-center space-x-6">
-                        <Link href="/" class="text-sm font-medium text-muted-foreground hover:text-primary transition-colors">
-                            Inicio
-                        </Link>
-                        <Link href="/tools/qr" class="text-sm font-medium text-muted-foreground hover:text-primary transition-colors">
-                            Generador QR
-                        </Link>
-                        <Link href="/tools/date-calculator" class="text-sm font-medium text-muted-foreground hover:text-primary transition-colors">
-                            Calculadora de Fechas
-                        </Link>
-                        <Link href="/tools/password-generator" class="text-sm font-medium text-muted-foreground hover:text-primary transition-colors">
-                            Generador de Contraseñas
-                        </Link>
-                    </nav>
-                </div>
-            </div>
-        </header>
-
-        <!-- Tools Subnav -->
-        <nav class="border-b bg-background/80 backdrop-blur supports-[backdrop-filter]:bg-background/60">
-          <div class="container mx-auto px-4">
-            <div class="flex items-center gap-2 overflow-x-auto py-3">
-              <Link href="/tools/qr" class="px-4 py-2 rounded-full text-sm font-medium transition-all whitespace-nowrap" :class="isActive('/tools/qr') ? 'bg-gradient-to-r from-blue-500 to-purple-600 text-white shadow' : 'bg-muted text-foreground hover:bg-muted/80'">Generador QR</Link>
-              <Link href="/tools/bmi" class="px-4 py-2 rounded-full text-sm font-medium transition-all whitespace-nowrap" :class="isActive('/tools/bmi') ? 'bg-gradient-to-r from-green-500 to-blue-600 text-white shadow' : 'bg-muted text-foreground hover:bg-muted/80'">Calculadora IMC</Link>
-              <Link href="/tools/date-calculator" class="px-4 py-2 rounded-full text-sm font-medium transition-all whitespace-nowrap" :class="isActive('/tools/date-calculator') ? 'bg-gradient-to-r from-orange-500 to-pink-600 text-white shadow' : 'bg-muted text-foreground hover:bg-muted/80'">Calculadora de Fechas</Link>
-              <Link href="/tools/password-generator" class="px-4 py-2 rounded-full text-sm font-medium transition-all whitespace-nowrap" :class="isActive('/tools/password-generator') ? 'bg-gradient-to-r from-purple-500 to-red-600 text-white shadow' : 'bg-muted text-foreground hover:bg-muted/80'">Generador de Contraseñas</Link>
-            </div>
-          </div>
-        </nav>
-
-    <!-- Hero Section -->
-    <section class="relative overflow-hidden bg-gradient-to-br from-green-50 via-blue-50 to-purple-50 dark:from-gray-900 dark:via-blue-900/20 dark:to-purple-900/20">
-      <div class="absolute inset-0 bg-grid-black/[0.02] -z-10"></div>
-      <div class="relative py-14">
-        <div class="container mx-auto px-4">
-          <div class="text-center max-w-3xl mx-auto">
-            <div class="inline-flex items-center rounded-full px-3 py-1 text-sm bg-gradient-to-r from-green-100 to-blue-100 text-green-800 dark:from-green-900/50 dark:to-blue-900/50 dark:text-green-300 mb-6 border border-green-200/50">
-              Calculadora de IMC
-            </div>
-            <h1 class="text-4xl lg:text-5xl font-bold mb-4 leading-tight">
-              <span class="bg-gradient-to-r from-green-600 via-blue-600 to-purple-600 bg-clip-text text-transparent">Conoce tu IMC</span>
-              <br />de forma rápida y precisa
-            </h1>
-            <p class="text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
-              Calcula tu Índice de Masa Corporal y conoce tu categoría de salud de inmediato.
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
+  <ToolsLayout title="Calculadora de IMC" subtitle="Calcula tu Índice de Masa Corporal y conoce tu categoría de salud.">
 
     <!-- Main Content -->
-    <main class="container mx-auto px-4 py-8">
-      <!-- SEO Content -->
-      <div class="mb-8">
-        <h1 class="text-4xl font-bold mb-4">Calculadora de IMC - Índice de Masa Corporal</h1>
-        <p class="text-lg text-muted-foreground mb-6">
-          Calcula tu Índice de Masa Corporal (IMC) de forma rápida y gratuita. Descubre si tu peso 
-          es saludable según los estándares médicos internacionales.
-        </p>
-      </div>
+    <main id="tool-main" class="container mx-auto px-4 py-6">
 
       <div class="grid lg:grid-cols-2 gap-8">
         <!-- Calculator Form -->
@@ -107,6 +27,7 @@
                     max="1000"
                     placeholder="70"
                     class="flex-1 rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
+                    autofocus
                     required
                   />
                   <select
@@ -155,6 +76,40 @@
                 </div>
               </div>
 
+              <div class="grid grid-cols-3 gap-2">
+                <div>
+                  <Label for="age">Edad</Label>
+                  <input id="age" v-model.number="form.age" type="number" min="10" max="100" class="w-full rounded-md border border-input bg-background px-3 py-2 text-sm" />
+                </div>
+                <div>
+                  <Label for="sex">Sexo</Label>
+                  <select id="sex" v-model="form.sex" class="w-full rounded-md border border-input bg-background px-3 py-2 text-sm">
+                    <option value="male">Hombre</option>
+                    <option value="female">Mujer</option>
+                  </select>
+                </div>
+                <div>
+                  <Label for="activity">Actividad</Label>
+                  <select id="activity" v-model.number="form.activity" class="w-full rounded-md border border-input bg-background px-3 py-2 text-sm">
+                    <option :value="1.2">Sedentario</option>
+                    <option :value="1.375">Ligero</option>
+                    <option :value="1.55">Moderado</option>
+                    <option :value="1.725">Intenso</option>
+                    <option :value="1.9">Muy intenso</option>
+                  </select>
+                </div>
+              </div>
+
+              <div>
+                <Label>Rellenar ejemplo</Label>
+                <div class="grid grid-cols-2 gap-2 mt-2">
+                  <Button type="button" variant="outline" size="sm" @click="applyPreset('male')">Hombre (80kg, 175cm, 30a, moderado)</Button>
+                  <Button type="button" variant="outline" size="sm" @click="applyPreset('female')">Mujer (60kg, 165cm, 28a, ligero)</Button>
+                  <Button type="button" variant="outline" size="sm" @click="applyPreset('athlete')">Atleta (85kg, 180cm, 25a, intenso)</Button>
+                  <Button type="button" variant="outline" size="sm" @click="applyPreset('senior')">Senior (70kg, 170cm, 65a, sedent.)</Button>
+                </div>
+              </div>
+
               <Button type="submit" class="w-full bg-gradient-to-r from-green-500 to-blue-600 hover:from-green-600 hover:to-blue-700 text-white border-0 rounded-xl py-3 font-semibold shadow-lg hover:shadow-xl transition-all">
                 Calcular IMC
               </Button>
@@ -180,6 +135,16 @@
                 <p class="text-sm text-muted-foreground">
                   {{ result.description }}
                 </p>
+                <div class="grid grid-cols-2 gap-3 mt-4 text-left">
+                  <div class="p-3 rounded border">
+                    <div class="text-xs text-muted-foreground">Peso saludable (IMC 18.5 - 24.9)</div>
+                    <div class="text-sm font-medium">{{ healthyWeightRange }}</div>
+                  </div>
+                  <div class="p-3 rounded border" v-if="bmrTdee">
+                    <div class="text-xs text-muted-foreground">BMR / TDEE</div>
+                    <div class="text-sm font-medium">{{ bmrTdee.bmr }} kcal / {{ bmrTdee.tdee }} kcal</div>
+                  </div>
+                </div>
               </div>
             </CardContent>
           </Card>
@@ -234,54 +199,33 @@
         </div>
       </div>
 
-      <!-- SEO Content -->
-      <div class="mt-12 prose prose-gray max-w-none">
-        <h2 class="text-2xl font-bold mb-4">¿Qué es el Índice de Masa Corporal (IMC)?</h2>
-        <p class="mb-4">
-          El Índice de Masa Corporal (IMC) es una medida que relaciona el peso y la altura de una persona 
-          para determinar si tiene un peso saludable. Es una herramienta útil para evaluar el riesgo de 
-          problemas de salud relacionados con el peso.
-        </p>
-        
-        <h3 class="text-xl font-semibold mb-3">¿Cómo se calcula el IMC?</h3>
-        <p class="mb-4">
-          La fórmula del IMC es: <strong>IMC = peso (kg) / altura (m)²</strong>
-        </p>
-        <p class="mb-4">
-          Por ejemplo, si pesas 70 kg y mides 1.75 m, tu IMC sería: 70 / (1.75)² = 22.86
-        </p>
-
-        <h3 class="text-xl font-semibold mb-3">Limitaciones del IMC</h3>
-        <ul class="list-disc pl-6 mb-4">
-          <li>No distingue entre masa muscular y grasa corporal</li>
-          <li>Puede no ser preciso para atletas con mucha masa muscular</li>
-          <li>No considera la distribución de la grasa corporal</li>
-          <li>Los rangos pueden variar según la edad y etnia</li>
-        </ul>
-
-        <h3 class="text-xl font-semibold mb-3">Recomendaciones importantes</h3>
-        <p class="mb-4">
-          El IMC es solo una herramienta de referencia. Para una evaluación completa de tu salud, 
-          siempre consulta con un profesional médico que pueda considerar otros factores como tu 
-          historia clínica, composición corporal y estilo de vida.
-        </p>
-      </div>
-    </main>
-
-    <!-- Footer -->
-    <footer class="border-t mt-16">
-      <div class="container mx-auto px-4 py-8">
-        <div class="text-center text-muted-foreground">
-          <p>&copy; 2024 ToolVibe. Herramientas online gratuitas para todos.</p>
+      <!-- SEO Content (collapsible) -->
+      <details class="mt-8 group">
+        <summary class="cursor-pointer select-none text-sm text-muted-foreground hover:text-foreground">Leer más sobre el IMC</summary>
+        <div class="mt-4 prose prose-gray max-w-none">
+          <h2 class="text-2xl font-bold mb-4">¿Qué es el Índice de Masa Corporal (IMC)?</h2>
+          <p class="mb-4">
+            El IMC relaciona el peso y la altura para estimar si un peso es saludable. Úsalo solo como referencia.
+          </p>
+          <h3 class="text-xl font-semibold mb-3">¿Cómo se calcula el IMC?</h3>
+          <p class="mb-4">IMC = peso (kg) / altura (m)². Ej.: 70kg / 1.75² = 22.86</p>
+          <h3 class="text-xl font-semibold mb-3">Limitaciones</h3>
+          <ul class="list-disc pl-6 mb-4">
+            <li>No distingue músculo vs. grasa</li>
+            <li>Puede no ser preciso en atletas</li>
+            <li>No considera distribución de grasa</li>
+          </ul>
+          <p class="mb-4 text-sm">Consulta siempre con un profesional para evaluación completa.</p>
         </div>
-      </div>
-    </footer>
-  </div>
+      </details>
+    </main>
+  </ToolsLayout>
 </template>
 
 <script setup lang="ts">
 import { ref, computed } from 'vue'
 import { Link } from '@inertiajs/vue3'
+import ToolsLayout from '@/layouts/tools/ToolsLayout.vue'
 import { Button } from '@/components/ui/button'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
 import { Label } from '@/components/ui/label'
@@ -302,7 +246,10 @@ const form = ref({
   height: null as number | null,
   inches: 0,
   weightUnit: 'kg',
-  heightUnit: 'cm'
+  heightUnit: 'cm',
+  age: 30,
+  sex: 'male',
+  activity: 1.55
 })
 
 const result = ref<{
@@ -312,6 +259,68 @@ const result = ref<{
   colorClass: string
 } | null>(null)
 
+const healthyWeightRange = computed(() => {
+  if (!form.value.height) return ''
+  let heightMeters = form.value.heightUnit === 'cm' ? (form.value.height / 100) : (form.value.heightUnit === 'ft' ? (((form.value.height * 12) + (form.value.inches || 0)) * 0.0254) : form.value.height)
+  const min = 18.5 * heightMeters * heightMeters
+  const max = 24.9 * heightMeters * heightMeters
+  // Return in current weight unit
+  if (form.value.weightUnit === 'lb') {
+    return `${(min * 2.20462).toFixed(1)} - ${(max * 2.20462).toFixed(1)} lb`
+  }
+  return `${min.toFixed(1)} - ${max.toFixed(1)} kg`
+})
+
+const bmrTdee = computed(() => {
+  if (!form.value.weight || !form.value.height || !form.value.age) return null
+  // Convert to metric for calculation
+  const weightKg = form.value.weightUnit === 'lb' ? form.value.weight * 0.453592 : form.value.weight
+  const heightCm = form.value.heightUnit === 'cm' ? form.value.height : (form.value.heightUnit === 'ft' ? (((form.value.height * 12) + (form.value.inches || 0)) * 2.54) : form.value.height * 100)
+  // Mifflin-St Jeor
+  const s = form.value.sex === 'male' ? 5 : -161
+  const bmr = Math.round((10 * weightKg) + (6.25 * heightCm) - (5 * form.value.age) + s)
+  const tdee = Math.round(bmr * (form.value.activity || 1.2))
+  return { bmr, tdee }
+})
+
+const applyPreset = (preset: 'male' | 'female' | 'athlete' | 'senior') => {
+  // Ensure metric units for presets
+  form.value.weightUnit = 'kg'
+  form.value.heightUnit = 'cm'
+  form.value.inches = 0
+
+  switch (preset) {
+    case 'male':
+      form.value.sex = 'male'
+      form.value.weight = 80
+      form.value.height = 175
+      form.value.age = 30
+      form.value.activity = 1.55
+      break
+    case 'female':
+      form.value.sex = 'female'
+      form.value.weight = 60
+      form.value.height = 165
+      form.value.age = 28
+      form.value.activity = 1.375
+      break
+    case 'athlete':
+      form.value.sex = 'male'
+      form.value.weight = 85
+      form.value.height = 180
+      form.value.age = 25
+      form.value.activity = 1.725
+      break
+    case 'senior':
+      form.value.sex = 'male'
+      form.value.weight = 70
+      form.value.height = 170
+      form.value.age = 65
+      form.value.activity = 1.2
+      break
+  }
+  calculateBMI()
+}
 // Helpers
 const isActive = (path: string) => typeof window !== 'undefined' && window.location.pathname.startsWith(path)
 

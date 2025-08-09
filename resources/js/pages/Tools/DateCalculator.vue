@@ -1,88 +1,8 @@
 <template>
-  <div class="min-h-screen bg-background">
-            <!-- Header -->
-        <header class="sticky top-0 z-50 w-full border-b bg-background/80 backdrop-blur-md supports-[backdrop-filter]:bg-background/60">
-            <div class="container mx-auto px-4 py-4">
-                <div class="flex items-center justify-between">
-                    <Link href="/" class="flex items-center space-x-3">
-                        <!-- Logo mejorado -->
-                        <div class="flex items-center space-x-2">
-                            <div class="relative">
-                                <div class="w-8 h-8 bg-gradient-to-br from-blue-500 via-purple-600 to-pink-500 rounded-lg flex items-center justify-center shadow-lg">
-                                    <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M13 10V3L4 14h7v7l9-11h-7z"/>
-                                    </svg>
-                                </div>
-                            </div>
-                            <div>
-                                <h1 class="text-xl font-bold bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 bg-clip-text text-transparent">
-                                    ToolVibe
-                                </h1>
-                                <p class="text-xs text-muted-foreground -mt-1">Calculadora Fechas</p>
-                            </div>
-                        </div>
-                    </Link>
-                    <nav class="hidden md:flex items-center space-x-6">
-                        <Link href="/" class="text-sm font-medium text-muted-foreground hover:text-primary transition-colors">
-                            Inicio
-                        </Link>
-                        <Link href="/tools/qr" class="text-sm font-medium text-muted-foreground hover:text-primary transition-colors">
-                            Generador QR
-                        </Link>
-                        <Link href="/tools/bmi" class="text-sm font-medium text-muted-foreground hover:text-primary transition-colors">
-                            Calculadora IMC
-                        </Link>
-                        <Link href="/tools/password-generator" class="text-sm font-medium text-muted-foreground hover:text-primary transition-colors">
-                            Generador de Contraseñas
-                        </Link>
-                    </nav>
-                </div>
-            </div>
-        </header>
-
-        <!-- Tools Subnav -->
-        <nav class="border-b bg-background/80 backdrop-blur supports-[backdrop-filter]:bg-background/60">
-          <div class="container mx-auto px-4">
-            <div class="flex items-center gap-2 overflow-x-auto py-3">
-              <Link href="/tools/qr" class="px-4 py-2 rounded-full text-sm font-medium transition-all whitespace-nowrap" :class="isActive('/tools/qr') ? 'bg-gradient-to-r from-blue-500 to-purple-600 text-white shadow' : 'bg-muted text-foreground hover:bg-muted/80'">Generador QR</Link>
-              <Link href="/tools/bmi" class="px-4 py-2 rounded-full text-sm font-medium transition-all whitespace-nowrap" :class="isActive('/tools/bmi') ? 'bg-gradient-to-r from-green-500 to-blue-600 text-white shadow' : 'bg-muted text-foreground hover:bg-muted/80'">Calculadora IMC</Link>
-              <Link href="/tools/date-calculator" class="px-4 py-2 rounded-full text-sm font-medium transition-all whitespace-nowrap" :class="isActive('/tools/date-calculator') ? 'bg-gradient-to-r from-orange-500 to-pink-600 text-white shadow' : 'bg-muted text-foreground hover:bg-muted/80'">Calculadora de Fechas</Link>
-              <Link href="/tools/password-generator" class="px-4 py-2 rounded-full text-sm font-medium transition-all whitespace-nowrap" :class="isActive('/tools/password-generator') ? 'bg-gradient-to-r from-purple-500 to-red-600 text-white shadow' : 'bg-muted text-foreground hover:bg-muted/80'">Generador de Contraseñas</Link>
-            </div>
-          </div>
-        </nav>
-
-    <!-- Hero Section -->
-    <section class="relative overflow-hidden bg-gradient-to-br from-orange-50 via-pink-50 to-purple-50 dark:from-gray-900 dark:via-purple-900/20 dark:to-pink-900/20">
-      <div class="absolute inset-0 bg-grid-black/[0.02] -z-10"></div>
-      <div class="relative py-14">
-        <div class="container mx-auto px-4">
-          <div class="text-center max-w-3xl mx-auto">
-            <div class="inline-flex items-center rounded-full px-3 py-1 text-sm bg-gradient-to-r from-orange-100 to-pink-100 text-orange-800 dark:from-orange-900/50 dark:to-pink-900/50 dark:text-orange-300 mb-6 border border-orange-200/50">
-              Calculadora de Fechas
-            </div>
-            <h1 class="text-4xl lg:text-5xl font-bold mb-4 leading-tight">
-              <span class="bg-gradient-to-r from-orange-600 via-pink-600 to-purple-600 bg-clip-text text-transparent">Diferencia entre Fechas</span>
-              <br />con desglose completo
-            </h1>
-            <p class="text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
-              Calcula días, semanas, meses y años entre dos fechas específicas.
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
+  <ToolsLayout title="Calculadora de Fechas" subtitle="Calcula días, semanas, meses y años entre dos fechas específicas.">
 
     <!-- Main Content -->
-    <main class="container mx-auto px-4 py-8">
-      <!-- SEO Content -->
-      <div class="mb-8">
-        <h1 class="text-4xl font-bold mb-4">Calculadora de Días Entre Fechas</h1>
-        <p class="text-lg text-muted-foreground mb-6">
-          Calcula la diferencia exacta entre dos fechas. Obtén resultados en días, semanas, meses y años. 
-          Perfecto para calcular edad, tiempo transcurrido o planificar eventos.
-        </p>
-      </div>
+    <main id="tool-main" class="container mx-auto px-4 py-6">
 
       <div class="grid lg:grid-cols-2 gap-8">
         <!-- Calculator Form -->
@@ -102,6 +22,7 @@
                   v-model="form.startDate"
                   type="date"
                   class="w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
+                  autofocus
                   required
                 />
               </div>
@@ -126,14 +47,35 @@
                 </Button>
               </div>
 
-              <div class="flex space-x-2">
-                <Button @click="setToday('start')" variant="outline" size="sm" class="flex-1">
-                  Hoy (Inicio)
-                </Button>
-                <Button @click="setToday('end')" variant="outline" size="sm" class="flex-1">
-                  Hoy (Final)
-                </Button>
+              <div class="grid grid-cols-2 gap-2">
+                <Button @click="setToday('start')" variant="outline" size="sm">Hoy (Inicio)</Button>
+                <Button @click="setToday('end')" variant="outline" size="sm">Hoy (Final)</Button>
               </div>
+
+              <div class="grid grid-cols-2 gap-2">
+                <label class="flex items-center gap-2 text-sm">
+                  <input type="checkbox" v-model="options.businessDaysOnly" /> Solo días hábiles
+                </label>
+                <label class="flex items-center gap-2 text-sm">
+                  <input type="checkbox" v-model="options.excludeWeekends" /> Excluir fines de semana
+                </label>
+              </div>
+
+              <div class="grid grid-cols-3 gap-2">
+                <div>
+                  <Label for="addDays">Sumar días</Label>
+                  <input id="addDays" type="number" v-model.number="options.addDays" class="w-full rounded-md border border-input bg-background px-3 py-2 text-sm"/>
+                </div>
+                <div>
+                  <Label for="addMonths">Sumar meses</Label>
+                  <input id="addMonths" type="number" v-model.number="options.addMonths" class="w-full rounded-md border border-input bg-background px-3 py-2 text-sm"/>
+                </div>
+                <div>
+                  <Label for="addYears">Sumar años</Label>
+                  <input id="addYears" type="number" v-model.number="options.addYears" class="w-full rounded-md border border-input bg-background px-3 py-2 text-sm"/>
+                </div>
+              </div>
+              <Button @click="applyAdditions" variant="outline" size="sm">Aplicar al final</Button>
             </div>
           </CardContent>
         </Card>
@@ -163,6 +105,10 @@
                   <div class="text-center p-4 border rounded-lg">
                     <div class="text-2xl font-bold text-primary">{{ result.totalYears }}</div>
                     <div class="text-sm text-muted-foreground">Años totales</div>
+                  </div>
+                  <div v-if="result.businessDays !== undefined" class="text-center p-4 border rounded-lg col-span-2">
+                    <div class="text-2xl font-bold text-primary">{{ result.businessDays }}</div>
+                    <div class="text-sm text-muted-foreground">Días hábiles (sin fines de semana)</div>
                   </div>
                 </div>
 
@@ -231,58 +177,28 @@
         </div>
       </div>
 
-      <!-- SEO Content -->
-      <div class="mt-12 prose prose-gray max-w-none">
-        <h2 class="text-2xl font-bold mb-4">¿Para qué sirve una calculadora de fechas?</h2>
-        <p class="mb-4">
-          Una calculadora de fechas es una herramienta muy útil que te permite calcular la diferencia 
-          exacta entre dos fechas específicas. Es perfecta para una gran variedad de situaciones 
-          tanto personales como profesionales.
-        </p>
-        
-        <h3 class="text-xl font-semibold mb-3">Casos de uso comunes</h3>
-        <ul class="list-disc pl-6 mb-4">
-          <li><strong>Calcular edad exacta:</strong> Conoce tu edad en años, meses y días</li>
-          <li><strong>Planificación de eventos:</strong> Tiempo restante hasta una fecha importante</li>
-          <li><strong>Gestión de proyectos:</strong> Duración de proyectos o tareas</li>
-          <li><strong>Recursos humanos:</strong> Tiempo de servicio, vacaciones, licencias</li>
-          <li><strong>Finanzas:</strong> Períodos de inversión, plazos de pago</li>
-          <li><strong>Salud:</strong> Seguimiento de tratamientos o embarazo</li>
-        </ul>
-
-        <h3 class="text-xl font-semibold mb-3">Ventajas de nuestra calculadora</h3>
-        <ul class="list-disc pl-6 mb-4">
-          <li>Resultados instantáneos y precisos</li>
-          <li>Múltiples unidades de tiempo: días, semanas, meses, años</li>
-          <li>Desglose detallado de la diferencia</li>
-          <li>Funciones rápidas para cálculos comunes</li>
-          <li>Interfaz intuitiva y fácil de usar</li>
-        </ul>
-
-        <h3 class="text-xl font-semibold mb-3">Consejos para usar la calculadora</h3>
-        <ul class="list-disc pl-6 mb-4">
-          <li>Asegúrate de seleccionar las fechas en el orden correcto</li>
-          <li>Usa el botón de intercambio si necesitas invertir las fechas</li>
-          <li>Aprovecha las acciones rápidas para cálculos frecuentes</li>
-          <li>El resultado incluye información adicional como horas y minutos</li>
-        </ul>
-      </div>
-    </main>
-
-    <!-- Footer -->
-    <footer class="border-t mt-16">
-      <div class="container mx-auto px-4 py-8">
-        <div class="text-center text-muted-foreground">
-          <p>&copy; 2024 ToolVibe. Herramientas online gratuitas para todos.</p>
+      <!-- SEO Content (collapsible) -->
+      <details class="mt-8 group">
+        <summary class="cursor-pointer select-none text-sm text-muted-foreground hover:text-foreground">Leer más sobre cálculo de fechas</summary>
+        <div class="mt-4 prose prose-gray max-w-none">
+          <h2 class="text-2xl font-bold mb-4">¿Para qué sirve una calculadora de fechas?</h2>
+          <p class="mb-4">Calcula diferencias exactas entre fechas para múltiples usos personales y profesionales.</p>
+          <h3 class="text-xl font-semibold mb-3">Casos de uso comunes</h3>
+          <ul class="list-disc pl-6 mb-4">
+            <li>Edad exacta</li>
+            <li>Planificación de eventos</li>
+            <li>Gestión de proyectos</li>
+          </ul>
         </div>
-      </div>
-    </footer>
-  </div>
+      </details>
+    </main>
+  </ToolsLayout>
 </template>
 
 <script setup lang="ts">
-import { ref } from 'vue'
+import { ref, watch } from 'vue'
 import { Link } from '@inertiajs/vue3'
+import ToolsLayout from '@/layouts/tools/ToolsLayout.vue'
 import { Button } from '@/components/ui/button'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
 import { Label } from '@/components/ui/label'
@@ -312,7 +228,16 @@ const result = ref<{
   totalMinutes: number
   totalSeconds: number
   detailedBreakdown: string
+  businessDays?: number
 } | null>(null)
+
+const options = ref({
+  businessDaysOnly: false,
+  excludeWeekends: false,
+  addDays: 0,
+  addMonths: 0,
+  addYears: 0
+})
 
 // Helpers
 const isActive = (path: string) => typeof window !== 'undefined' && window.location.pathname.startsWith(path)
@@ -341,8 +266,29 @@ const calculateDifference = () => {
   const totalSeconds = Math.floor(diffInMs / 1000)
   const totalMinutes = Math.floor(totalSeconds / 60)
   const totalHours = Math.floor(totalMinutes / 60)
-  const totalDays = Math.floor(totalHours / 24)
-  const totalWeeks = Math.floor(totalDays / 7)
+  let totalDays = Math.floor(totalHours / 24)
+  let totalWeeks = Math.floor(totalDays / 7)
+
+  // Business days (exclude weekends) calculation
+  let businessDays: number | undefined
+  if (options.value.excludeWeekends || options.value.businessDaysOnly) {
+    const countBusinessDays = (start: Date, end: Date): number => {
+      let count = 0
+      const cur = new Date(start)
+      // Iterate day by day, inclusive of end date
+      while (cur <= end) {
+        const day = cur.getDay()
+        if (day !== 0 && day !== 6) count++
+        cur.setDate(cur.getDate() + 1)
+      }
+      return count
+    }
+    businessDays = countBusinessDays(startDate, endDate)
+    if (options.value.businessDaysOnly) {
+      totalDays = businessDays
+      totalWeeks = Math.floor((businessDays || 0) / 5) // approx weeks of 5 business days
+    }
+  }
   
   // Calculate years and months more accurately
   let years = endDate.getFullYear() - startDate.getFullYear()
@@ -388,7 +334,8 @@ const calculateDifference = () => {
     totalHours,
     totalMinutes,
     totalSeconds,
-    detailedBreakdown
+    detailedBreakdown,
+    businessDays
   }
 }
 
@@ -462,5 +409,28 @@ const nextBirthday = () => {
     form.value.endDate = nextBirthday.toISOString().split('T')[0]
     calculateDifference()
   }
+}
+
+// Auto-calculate when both dates are present
+watch(form, () => {
+  if (form.value.startDate && form.value.endDate) {
+    calculateDifference()
+  }
+}, { deep: true })
+// React to options changes as well
+watch(options, () => {
+  if (form.value.startDate && form.value.endDate) {
+    calculateDifference()
+  }
+}, { deep: true })
+
+const applyAdditions = () => {
+  if (!form.value.endDate) return
+  const end = new Date(form.value.endDate)
+  if (options.value.addYears) end.setFullYear(end.getFullYear() + options.value.addYears)
+  if (options.value.addMonths) end.setMonth(end.getMonth() + options.value.addMonths)
+  if (options.value.addDays) end.setDate(end.getDate() + options.value.addDays)
+  form.value.endDate = end.toISOString().split('T')[0]
+  calculateDifference()
 }
 </script>

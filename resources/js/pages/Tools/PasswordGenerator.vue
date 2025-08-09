@@ -1,88 +1,8 @@
 <template>
-  <div class="min-h-screen bg-background">
-            <!-- Header -->
-        <header class="sticky top-0 z-50 w-full border-b bg-background/80 backdrop-blur-md supports-[backdrop-filter]:bg-background/60">
-            <div class="container mx-auto px-4 py-4">
-                <div class="flex items-center justify-between">
-                    <Link href="/" class="flex items-center space-x-3">
-                        <!-- Logo mejorado -->
-                        <div class="flex items-center space-x-2">
-                            <div class="relative">
-                                <div class="w-8 h-8 bg-gradient-to-br from-blue-500 via-purple-600 to-pink-500 rounded-lg flex items-center justify-center shadow-lg">
-                                    <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M13 10V3L4 14h7v7l9-11h-7z"/>
-                                    </svg>
-                                </div>
-                            </div>
-                            <div>
-                                <h1 class="text-xl font-bold bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 bg-clip-text text-transparent">
-                                    ToolVibe
-                                </h1>
-                                <p class="text-xs text-muted-foreground -mt-1">Generador Contraseñas</p>
-                            </div>
-                        </div>
-                    </Link>
-                    <nav class="hidden md:flex items-center space-x-6">
-                        <Link href="/" class="text-sm font-medium text-muted-foreground hover:text-primary transition-colors">
-                            Inicio
-                        </Link>
-                        <Link href="/tools/qr" class="text-sm font-medium text-muted-foreground hover:text-primary transition-colors">
-                            Generador QR
-                        </Link>
-                        <Link href="/tools/bmi" class="text-sm font-medium text-muted-foreground hover:text-primary transition-colors">
-                            Calculadora IMC
-                        </Link>
-                        <Link href="/tools/date-calculator" class="text-sm font-medium text-muted-foreground hover:text-primary transition-colors">
-                            Calculadora de Fechas
-                        </Link>
-                    </nav>
-                </div>
-            </div>
-        </header>
-
-        <!-- Tools Subnav -->
-        <nav class="border-b bg-background/80 backdrop-blur supports-[backdrop-filter]:bg-background/60">
-          <div class="container mx-auto px-4">
-            <div class="flex items-center gap-2 overflow-x-auto py-3">
-              <Link href="/tools/qr" class="px-4 py-2 rounded-full text-sm font-medium transition-all whitespace-nowrap" :class="isActive('/tools/qr') ? 'bg-gradient-to-r from-blue-500 to-purple-600 text-white shadow' : 'bg-muted text-foreground hover:bg-muted/80'">Generador QR</Link>
-              <Link href="/tools/bmi" class="px-4 py-2 rounded-full text-sm font-medium transition-all whitespace-nowrap" :class="isActive('/tools/bmi') ? 'bg-gradient-to-r from-green-500 to-blue-600 text-white shadow' : 'bg-muted text-foreground hover:bg-muted/80'">Calculadora IMC</Link>
-              <Link href="/tools/date-calculator" class="px-4 py-2 rounded-full text-sm font-medium transition-all whitespace-nowrap" :class="isActive('/tools/date-calculator') ? 'bg-gradient-to-r from-orange-500 to-pink-600 text-white shadow' : 'bg-muted text-foreground hover:bg-muted/80'">Calculadora de Fechas</Link>
-              <Link href="/tools/password-generator" class="px-4 py-2 rounded-full text-sm font-medium transition-all whitespace-nowrap" :class="isActive('/tools/password-generator') ? 'bg-gradient-to-r from-purple-500 to-red-600 text-white shadow' : 'bg-muted text-foreground hover:bg-muted/80'">Generador de Contraseñas</Link>
-            </div>
-          </div>
-        </nav>
-
-    <!-- Hero Section -->
-    <section class="relative overflow-hidden bg-gradient-to-br from-purple-50 via-red-50 to-pink-50 dark:from-gray-900 dark:via-purple-900/20 dark:to-red-900/20">
-      <div class="absolute inset-0 bg-grid-black/[0.02] -z-10"></div>
-      <div class="relative py-14">
-        <div class="container mx-auto px-4">
-          <div class="text-center max-w-3xl mx-auto">
-            <div class="inline-flex items-center rounded-full px-3 py-1 text-sm bg-gradient-to-r from-purple-100 to-red-100 text-purple-800 dark:from-purple-900/50 dark:to-red-900/50 dark:text-purple-300 mb-6 border border-purple-200/50">
-              Generador de Contraseñas
-            </div>
-            <h1 class="text-4xl lg:text-5xl font-bold mb-4 leading-tight">
-              <span class="bg-gradient-to-r from-purple-600 via-pink-600 to-red-600 bg-clip-text text-transparent">Contraseñas Ultra Seguras</span>
-              <br />en un clic y a tu medida
-            </h1>
-            <p class="text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
-              Crea contraseñas robustas con longitud, símbolos, números y mayúsculas personalizadas.
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
+  <ToolsLayout title="Generador de Contraseñas" subtitle="Crea contraseñas robustas, genera múltiples y exporta a CSV.">
 
     <!-- Main Content -->
-    <main class="container mx-auto px-4 py-8">
-      <!-- SEO Content -->
-      <div class="mb-8">
-        <h1 class="text-4xl font-bold mb-4">Generador de Contraseñas Seguras Online</h1>
-        <p class="text-lg text-muted-foreground mb-6">
-          Crea contraseñas seguras y aleatorias con nuestro generador gratuito. Personaliza longitud, 
-          caracteres especiales y opciones avanzadas para máxima seguridad.
-        </p>
-      </div>
+    <main id="tool-main" class="container mx-auto px-4 py-6">
 
       <div class="grid lg:grid-cols-2 gap-8">
         <!-- Generator Form -->
@@ -168,6 +88,14 @@
                     />
                     <span class="text-sm">Excluir caracteres ambiguos ( { } [ ] ( ) / \ ' " ` ~ , ; . < > )</span>
                   </label>
+                  <label class="flex items-center space-x-2">
+                    <input
+                      v-model="options.avoidSequences"
+                      type="checkbox"
+                      class="rounded border-gray-300"
+                    />
+                    <span class="text-sm">Evitar secuencias (1234, abcd)</span>
+                  </label>
                 </div>
               </div>
 
@@ -219,6 +147,11 @@
                 <div v-if="copied" class="text-sm text-green-600 dark:text-green-400">
                   ¡Contraseña copiada al portapapeles!
                 </div>
+
+                <div v-if="multiplePasswords.length" class="mt-4">
+                  <Label>Lista generada ({{ multiplePasswords.length }})</Label>
+                  <textarea readonly class="w-full font-mono text-xs rounded-md border border-input bg-background px-3 py-2 mt-1" rows="4">{{ multiplePasswords.join('\n') }}</textarea>
+                </div>
               </div>
             </CardContent>
           </Card>
@@ -269,6 +202,10 @@
                   PIN (4 números)
                 </Button>
               </div>
+              <div class="mt-3 grid grid-cols-2 gap-2">
+                <Button @click="generateMultiple(10)" variant="outline" size="sm">10 contraseñas</Button>
+                <Button @click="exportCsv" variant="outline" size="sm" :disabled="!multiplePasswords.length">Exportar CSV</Button>
+              </div>
             </CardContent>
           </Card>
 
@@ -291,55 +228,28 @@
         </div>
       </div>
 
-      <!-- SEO Content -->
-      <div class="mt-12 prose prose-gray max-w-none">
-        <h2 class="text-2xl font-bold mb-4">¿Por qué usar un generador de contraseñas?</h2>
-        <p class="mb-4">
-          En el mundo digital actual, tener contraseñas seguras es fundamental para proteger 
-          tus cuentas y datos personales. Un generador de contraseñas te ayuda a crear 
-          contraseñas robustas que son prácticamente imposibles de adivinar.
-        </p>
-        
-        <h3 class="text-xl font-semibold mb-3">Características de una contraseña segura</h3>
-        <ul class="list-disc pl-6 mb-4">
-          <li><strong>Longitud:</strong> Al menos 12 caracteres, idealmente 16 o más</li>
-          <li><strong>Variedad:</strong> Combinación de mayúsculas, minúsculas, números y símbolos</li>
-          <li><strong>Aleatoriedad:</strong> Sin patrones predecibles o información personal</li>
-          <li><strong>Unicidad:</strong> Diferente para cada cuenta o servicio</li>
-        </ul>
-
-        <h3 class="text-xl font-semibold mb-3">Errores comunes en contraseñas</h3>
-        <ul class="list-disc pl-6 mb-4">
-          <li>Usar fechas de nacimiento, nombres o información personal</li>
-          <li>Reutilizar la misma contraseña en múltiples sitios</li>
-          <li>Usar contraseñas demasiado cortas (menos de 8 caracteres)</li>
-          <li>Usar solo letras o solo números</li>
-          <li>Usar patrones de teclado como "123456" o "qwerty"</li>
-        </ul>
-
-        <h3 class="text-xl font-semibold mb-3">Gestión de contraseñas</h3>
-        <p class="mb-4">
-          Te recomendamos usar un gestor de contraseñas como LastPass, 1Password, Bitwarden 
-          o similares. Estas herramientas pueden generar, almacenar y rellenar automáticamente 
-          contraseñas seguras, haciendo que tu vida digital sea más segura y conveniente.
-        </p>
-      </div>
-    </main>
-
-    <!-- Footer -->
-    <footer class="border-t mt-16">
-      <div class="container mx-auto px-4 py-8">
-        <div class="text-center text-muted-foreground">
-          <p>&copy; 2024 ToolVibe. Herramientas online gratuitas para todos.</p>
+      <!-- SEO Content (collapsible) -->
+      <details class="mt-8 group">
+        <summary class="cursor-pointer select-none text-sm text-muted-foreground hover:text-foreground">Consejos de seguridad</summary>
+        <div class="mt-4 prose prose-gray max-w-none">
+          <h2 class="text-2xl font-bold mb-4">¿Por qué usar un generador de contraseñas?</h2>
+          <p class="mb-4">Crea contraseñas seguras y evita patrones predecibles.</p>
+          <h3 class="text-xl font-semibold mb-3">Características de una contraseña segura</h3>
+          <ul class="list-disc pl-6 mb-4">
+            <li>Longitud ≥ 12</li>
+            <li>Variedad de caracteres</li>
+            <li>Aleatoriedad y unicidad</li>
+          </ul>
         </div>
-      </div>
-    </footer>
-  </div>
+      </details>
+    </main>
+  </ToolsLayout>
 </template>
 
 <script setup lang="ts">
 import { ref, computed, watch } from 'vue'
 import { Link } from '@inertiajs/vue3'
+import ToolsLayout from '@/layouts/tools/ToolsLayout.vue'
 import { Button } from '@/components/ui/button'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
 import { Label } from '@/components/ui/label'
@@ -362,12 +272,14 @@ const options = ref({
   includeNumbers: true,
   includeSymbols: true,
   excludeSimilar: false,
-  excludeAmbiguous: false
+  excludeAmbiguous: false,
+  avoidSequences: true
 })
 
 const generatedPassword = ref('')
 const showPassword = ref(false)
 const copied = ref(false)
+const multiplePasswords = ref<string[]>([])
 
 // Helpers
 const isActive = (path: string) => typeof window !== 'undefined' && window.location.pathname.startsWith(path)
@@ -469,6 +381,13 @@ const generatePassword = () => {
     password += chars.charAt(Math.floor(Math.random() * chars.length))
   }
 
+  if (options.value.avoidSequences) {
+    const isSequential = (s: string) => /0123|1234|2345|3456|4567|5678|6789|abcd|bcde|cdef|defg|efgh|fghi|ghij/i.test(s)
+    if (isSequential(password)) {
+      return generatePassword()
+    }
+  }
+
   generatedPassword.value = password
 }
 
@@ -551,4 +470,28 @@ generatePassword()
 
 // Watch for option changes to auto-regenerate
 watch(options, generatePassword, { deep: true })
+
+const generateMultiple = (count: number) => {
+  const set = new Set<string>()
+  while (set.size < count) {
+    generatePassword()
+    if (generatedPassword.value) {
+      set.add(generatedPassword.value)
+    }
+  }
+  multiplePasswords.value = Array.from(set)
+}
+
+const exportCsv = () => {
+  if (!multiplePasswords.value.length) return
+  const rows = ['password']
+  for (const p of multiplePasswords.value) rows.push(`"${p.replaceAll('"','""')}"`)
+  const blob = new Blob([rows.join('\n')], { type: 'text/csv;charset=utf-8;' })
+  const url = URL.createObjectURL(blob)
+  const a = document.createElement('a')
+  a.href = url
+  a.download = 'passwords.csv'
+  a.click()
+  URL.revokeObjectURL(url)
+}
 </script>
