@@ -27,6 +27,50 @@ Route::prefix('tools')->group(function () {
     Route::get('/bmi', [BmiCalculatorController::class, 'index'])->name('tools.bmi');
     Route::get('/date-calculator', [DateCalculatorController::class, 'index'])->name('tools.date-calculator');
     Route::get('/password-generator', [PasswordGeneratorController::class, 'index'])->name('tools.password-generator');
+    
+    Route::get('/unit-converter', function () {
+        return Inertia::render('Tools/UnitConverter', [
+            'meta' => [
+                'title' => 'Convertidor de Unidades - ToolVibe',
+                'description' => 'Convierte entre diferentes unidades de longitud, peso, volumen, temperatura, área y velocidad. Herramienta online gratuita y fácil de usar.',
+                'keywords' => 'convertidor unidades, conversión unidades, calculadora conversión, herramientas online',
+                'url' => request()->url(),
+            ]
+        ]);
+    })->name('tools.unit-converter');
+    
+    Route::get('/percentage-calculator', function () {
+        return Inertia::render('Tools/PercentageCalculator', [
+            'meta' => [
+                'title' => 'Calculadora de Porcentajes - ToolVibe',
+                'description' => 'Calcula porcentajes, descuentos, aumentos, propinas y división de cuentas. Herramienta online gratuita para cálculos matemáticos.',
+                'keywords' => 'calculadora porcentajes, descuentos, aumentos, propinas, matemáticas online',
+                'url' => request()->url(),
+            ]
+        ]);
+    })->name('tools.percentage-calculator');
+    
+    Route::get('/color-generator', function () {
+        return Inertia::render('Tools/ColorGenerator', [
+            'meta' => [
+                'title' => 'Generador de Colores - ToolVibe',
+                'description' => 'Genera paletas de colores armónicas, convierte entre formatos de color y crea gradientes personalizados. Herramienta online para diseñadores.',
+                'keywords' => 'generador colores, paletas colores, conversor colores, gradientes, diseño online',
+                'url' => request()->url(),
+            ]
+        ]);
+    })->name('tools.color-generator');
+    
+    Route::get('/time-calculator', function () {
+        return Inertia::render('Tools/TimeCalculator', [
+            'meta' => [
+                'title' => 'Calculadora de Tiempo - ToolVibe',
+                'description' => 'Calcula duraciones, fechas futuras, diferencias de tiempo y convierte entre unidades temporales. Herramienta online gratuita.',
+                'keywords' => 'calculadora tiempo, duración fechas, conversión tiempo, herramientas online',
+                'url' => request()->url(),
+            ]
+        ]);
+    })->name('tools.time-calculator');
 });
 
 // SEO routes

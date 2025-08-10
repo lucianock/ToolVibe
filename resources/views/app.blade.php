@@ -31,7 +31,7 @@
             }
         </style>
 
-        <title inertia>{{ config('app.name', 'Laravel') }}</title>
+        <title inertia>{{ config('app.name', 'ToolVibe') }}</title>
         
         {{-- Dynamic Meta Tags --}}
         @if(isset($page['props']['meta']))

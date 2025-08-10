@@ -37,6 +37,18 @@
             <Link href="/tools/password-generator" :class="[compact ? 'px-2 py-1 text-[11px]' : 'px-3 py-1.5 text-xs md:text-sm', isActive('/tools/password-generator') ? 'bg-gradient-to-r from-purple-500 to-red-600 text-white shadow-lg' : 'bg-gradient-to-r from-purple-400 to-red-500 text-white hover:from-purple-500 hover:to-red-600 shadow-md hover:shadow-lg transition-all duration-300']" class="rounded-full font-medium whitespace-nowrap" style="background: linear-gradient(to right, #a855f7, #ef4444); color: white;">
               Generador de Contraseñas
             </Link>
+            <Link href="/tools/unit-converter" :class="[compact ? 'px-2 py-1 text-[11px]' : 'px-3 py-1.5 text-xs md:text-sm', isActive('/tools/unit-converter') ? 'bg-gradient-to-r from-teal-500 to-blue-600 text-white shadow-lg' : 'bg-gradient-to-r from-teal-400 to-blue-500 text-white hover:from-teal-500 hover:to-blue-600 shadow-md hover:shadow-lg transition-all duration-300']" class="rounded-full font-medium whitespace-nowrap" style="background: linear-gradient(to right, #14b8a6, #3b82f6); color: white;">
+              Convertidor de Unidades
+            </Link>
+            <Link href="/tools/percentage-calculator" :class="[compact ? 'px-2 py-1 text-[11px]' : 'px-3 py-1.5 text-xs md:text-sm', isActive('/tools/percentage-calculator') ? 'bg-gradient-to-r from-emerald-500 to-cyan-600 text-white shadow-lg' : 'bg-gradient-to-r from-emerald-400 to-cyan-500 text-white hover:from-emerald-500 hover:to-cyan-600 shadow-md hover:shadow-lg transition-all duration-300']" class="rounded-full font-medium whitespace-nowrap" style="background: linear-gradient(to right, #10b981, #0891b2); color: white;">
+              Calculadora de Porcentajes
+            </Link>
+            <Link href="/tools/color-generator" :class="[compact ? 'px-2 py-1 text-[11px]' : 'px-3 py-1.5 text-xs md:text-sm', isActive('/tools/color-generator') ? 'bg-gradient-to-r from-pink-500 to-indigo-600 text-white shadow-lg' : 'bg-gradient-to-r from-pink-400 to-indigo-500 text-white hover:from-pink-500 hover:to-indigo-600 shadow-md hover:shadow-lg transition-all duration-300']" class="rounded-full font-medium whitespace-nowrap" style="background: linear-gradient(to right, #ec4899, #4f46e5); color: white;">
+              Generador de Colores
+            </Link>
+            <Link href="/tools/time-calculator" :class="[compact ? 'px-2 py-1 text-[11px]' : 'px-3 py-1.5 text-xs md:text-sm', isActive('/tools/time-calculator') ? 'bg-gradient-to-r from-amber-500 to-orange-600 text-white shadow-lg' : 'bg-gradient-to-r from-amber-400 to-orange-500 text-white hover:from-amber-500 hover:to-orange-600 shadow-md hover:shadow-lg transition-all duration-300']" class="rounded-full font-medium whitespace-nowrap" style="background: linear-gradient(to right, #f59e0b, #ea580c); color: white;">
+              Calculadora de Tiempo
+            </Link>
           </div>
         </div>
       </div>
