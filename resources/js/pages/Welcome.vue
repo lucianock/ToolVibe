@@ -75,7 +75,7 @@ defineProps<{
             <div class="absolute top-0 -right-4 w-72 h-72 bg-yellow-300 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-blob animation-delay-2000"></div>
             <div class="absolute -bottom-8 left-20 w-72 h-72 bg-pink-300 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-blob animation-delay-4000"></div>
             
-            <div class="relative py-24 lg:py-32">
+            <div class="relative pt-8 pb-24 lg:pt-12 lg:pb-32">
                 <div class="container mx-auto px-4">
                     <div class="text-center max-w-4xl mx-auto">
                         <!-- Badge -->
