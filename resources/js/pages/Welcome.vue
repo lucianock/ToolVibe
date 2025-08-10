@@ -150,111 +150,74 @@ defineProps<{
             </div>
         </section>
 
-        <!-- Tools Section -->
-        <section id="herramientas" class="py-20 bg-white dark:bg-gray-900">
-            <div class="container mx-auto px-4">
-                <div class="text-center mb-16">
-                    <h2 class="text-4xl lg:text-5xl font-bold mb-6">
-                        <span class="bg-gradient-to-r from-gray-900 to-gray-600 dark:from-white dark:to-gray-300 bg-clip-text text-transparent">
-                            Nuestras Herramientas
-                            </span>
+        <!-- QR Generator Hero Section -->
+        <section id="herramientas" class="py-20 bg-gradient-to-br from-blue-50 via-purple-50 to-pink-50 dark:from-gray-900 dark:via-blue-900/20 dark:to-purple-900/20 relative overflow-hidden">
+            <div class="absolute inset-0 bg-grid-black/[0.02] -z-10"></div>
+            <div class="absolute top-0 -left-4 w-40 h-40 bg-purple-300 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-blob"></div>
+            <div class="absolute top-0 -right-4 w-40 h-40 bg-yellow-300 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-blob animation-delay-2000"></div>
+            <div class="absolute -bottom-6 left-20 w-40 h-40 bg-pink-300 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-blob animation-delay-4000"></div>
+            
+            <div class="container mx-auto px-4 relative">
+                <div class="text-center max-w-4xl mx-auto">
+                    
+                    
+                    <h2 class="text-4xl lg:text-5xl font-bold mb-6 leading-tight">
+                        <span class="bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 bg-clip-text text-transparent">Crea Códigos QR</span>
+                        <span class="text-gray-900 dark:text-white"> en segundos</span>
                     </h2>
-                    <p class="text-xl text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
-                        Suite completa de herramientas profesionales diseñadas para potenciar tu productividad
+                    
+                    <p class="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto mb-12 leading-relaxed">
+                        Convierte URLs, textos, WiFi y más en códigos QR listos para descargar.
                     </p>
-                </div>
-                
-                <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-7xl mx-auto">
-                    <!-- QR Generator -->
-                    <div class="group relative">
-                        <div class="absolute inset-0 bg-gradient-to-r from-blue-500 to-purple-600 rounded-3xl blur opacity-20 group-hover:opacity-40 transition-opacity"></div>
-                        <Card class="relative bg-white dark:bg-gray-800 border-0 shadow-xl hover:shadow-2xl transition-all duration-300 rounded-3xl overflow-hidden group-hover:scale-105">
-                            <CardHeader class="text-center p-8">
-                                <div class="w-16 h-16 bg-gradient-to-br from-blue-500 to-purple-600 rounded-2xl flex items-center justify-center mb-6 mx-auto shadow-lg">
-                                    <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v1m6 11h2m-6 0h-2v4m0-11v3m0 0h.01M12 12h4.01M12 12h-3.99M12 12V8.01"/>
-                                    </svg>
-                                </div>
-                                <CardTitle class="text-xl font-bold mb-3">Generador de QR</CardTitle>
-                                <CardDescription class="text-gray-600 dark:text-gray-300">
-                                    Crea códigos QR para URLs, texto, contactos y más con calidad profesional
-                                </CardDescription>
-                            </CardHeader>
-                            <CardContent class="p-8 pt-0">
-                                <Button asChild class="w-full bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 text-white border-0 rounded-xl py-3 font-semibold shadow-lg hover:shadow-xl transition-all">
-                                    <Link href="/tools/qr">Usar Ahora</Link>
-                                </Button>
-                            </CardContent>
-                        </Card>
+                    
+                    <div class="flex flex-wrap justify-center gap-4 mb-8">
+                        <Button asChild size="lg" class="bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 text-white border-0 shadow-2xl hover:shadow-purple-500/25 px-8 py-4 text-lg font-semibold rounded-2xl transform hover:scale-105 transition-all duration-300">
+                            <Link href="/tools/qr">
+                                <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v1m6 11h2m-6 0h-2v4m0-11v3m0 0h.01M12 12h4.01M12 12h-3.99M12 12V8.01"/>
+                                </svg>
+                                Generar QR Ahora
+                            </Link>
+                        </Button>
                     </div>
-
-                    <!-- BMI Calculator -->
-                    <div class="group relative">
-                        <div class="absolute inset-0 bg-gradient-to-r from-green-500 to-blue-600 rounded-3xl blur opacity-20 group-hover:opacity-40 transition-opacity"></div>
-                        <Card class="relative bg-white dark:bg-gray-800 border-0 shadow-xl hover:shadow-2xl transition-all duration-300 rounded-3xl overflow-hidden group-hover:scale-105">
-                            <CardHeader class="text-center p-8">
-                                <div class="w-16 h-16 bg-gradient-to-br from-green-500 to-blue-600 rounded-2xl flex items-center justify-center mb-6 mx-auto shadow-lg">
-                                    <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z"/>
-                                    </svg>
-                                </div>
-                                <CardTitle class="text-xl font-bold mb-3">Calculadora IMC</CardTitle>
-                                <CardDescription class="text-gray-600 dark:text-gray-300">
-                                    Calcula tu Índice de Masa Corporal con resultados precisos y categorizados
-                                </CardDescription>
-                            </CardHeader>
-                            <CardContent class="p-8 pt-0">
-                                <Button asChild class="w-full bg-gradient-to-r from-green-500 to-blue-600 hover:from-green-600 hover:to-blue-700 text-white border-0 rounded-xl py-3 font-semibold shadow-lg hover:shadow-xl transition-all">
-                                    <Link href="/tools/bmi">Usar Ahora</Link>
-                                </Button>
-                            </CardContent>
-                        </Card>
-                    </div>
-
-                    <!-- Date Calculator -->
-                    <div class="group relative">
-                        <div class="absolute inset-0 bg-gradient-to-r from-orange-500 to-pink-600 rounded-3xl blur opacity-20 group-hover:opacity-40 transition-opacity"></div>
-                        <Card class="relative bg-white dark:bg-gray-800 border-0 shadow-xl hover:shadow-2xl transition-all duration-300 rounded-3xl overflow-hidden group-hover:scale-105">
-                            <CardHeader class="text-center p-8">
-                                <div class="w-16 h-16 bg-gradient-to-br from-orange-500 to-pink-600 rounded-2xl flex items-center justify-center mb-6 mx-auto shadow-lg">
-                                    <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/>
-                                    </svg>
-                                </div>
-                                <CardTitle class="text-xl font-bold mb-3">Calculadora de Fechas</CardTitle>
-                                <CardDescription class="text-gray-600 dark:text-gray-300">
-                                    Calcula diferencias entre fechas con desglose completo en días, semanas y meses
-                                </CardDescription>
-                            </CardHeader>
-                            <CardContent class="p-8 pt-0">
-                                <Button asChild class="w-full bg-gradient-to-r from-orange-500 to-pink-600 hover:from-orange-600 hover:to-pink-700 text-white border-0 rounded-xl py-3 font-semibold shadow-lg hover:shadow-xl transition-all">
-                                    <Link href="/tools/date-calculator">Usar Ahora</Link>
-                                </Button>
-                            </CardContent>
-                        </Card>
-                    </div>
-
-                    <!-- Password Generator -->
-                    <div class="group relative">
-                        <div class="absolute inset-0 bg-gradient-to-r from-purple-500 to-red-600 rounded-3xl blur opacity-20 group-hover:opacity-40 transition-opacity"></div>
-                        <Card class="relative bg-white dark:bg-gray-800 border-0 shadow-xl hover:shadow-2xl transition-all duration-300 rounded-3xl overflow-hidden group-hover:scale-105">
-                            <CardHeader class="text-center p-8">
-                                <div class="w-16 h-16 bg-gradient-to-br from-purple-500 to-red-600 rounded-2xl flex items-center justify-center mb-6 mx-auto shadow-lg">
-                                    <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/>
-                                    </svg>
-                                </div>
-                                <CardTitle class="text-xl font-bold mb-3">Generador de Contraseñas</CardTitle>
-                                <CardDescription class="text-gray-600 dark:text-gray-300">
-                                    Crea contraseñas ultra-seguras con configuraciones avanzadas y personalizables
-                                </CardDescription>
-                            </CardHeader>
-                            <CardContent class="p-8 pt-0">
-                                <Button asChild class="w-full bg-gradient-to-r from-purple-500 to-red-600 hover:from-purple-600 hover:to-red-700 text-white border-0 rounded-xl py-3 font-semibold shadow-lg hover:shadow-xl transition-all">
-                                    <Link href="/tools/password-generator">Usar Ahora</Link>
-                                </Button>
-                            </CardContent>
-                        </Card>
+                    
+                    <!-- Tool Navigation Buttons -->
+                    <div class="flex flex-wrap justify-center gap-4">
+                        <Button asChild variant="outline" size="lg" class="bg-white/80 backdrop-blur-sm border-gray-200 text-gray-700 hover:bg-white hover:border-gray-300 hover:text-gray-900 transition-all duration-300 px-6 py-3 rounded-xl shadow-lg">
+                            <Link href="/tools/qr">
+                                <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v1m6 11h2m-6 0h-2v4m0-11v3m0 0h.01M12 12h4.01M12 12h-3.99M12 12V8.01"/>
+                                </svg>
+                                Generador QR
+                            </Link>
+                        </Button>
+                        
+                        <Button asChild variant="outline" size="lg" class="bg-white/80 backdrop-blur-sm border-gray-200 text-gray-700 hover:bg-white hover:border-gray-300 hover:text-gray-900 transition-all duration-300 px-6 py-3 rounded-xl shadow-lg">
+                            <Link href="/tools/bmi">
+                                <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z"/>
+                                </svg>
+                                Calculadora IMC
+                            </Link>
+                        </Button>
+                        
+                        <Button asChild variant="outline" size="lg" class="bg-white/80 backdrop-blur-sm border-gray-200 text-gray-700 hover:bg-white hover:border-gray-300 hover:text-gray-900 transition-all duration-300 px-6 py-3 rounded-xl shadow-lg">
+                            <Link href="/tools/date-calculator">
+                                <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/>
+                                </svg>
+                                Calculadora de Fechas
+                            </Link>
+                        </Button>
+                        
+                        <Button asChild variant="outline" size="lg" class="bg-white/80 backdrop-blur-sm border-gray-200 text-gray-700 hover:bg-white hover:border-gray-300 hover:text-gray-900 transition-all duration-300 px-6 py-3 rounded-xl shadow-lg">
+                            <Link href="/tools/password-generator">
+                                <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/>
+                                </svg>
+                                Generador de Contraseñas
+                            </Link>
+                        </Button>
                     </div>
                 </div>
             </div>

@@ -15,10 +15,10 @@
             <p v-if="title" class="text-[10px] md:text-xs text-muted-foreground -mt-1">{{ title }}</p>
           </div>
         </Link>
-        <nav class="hidden md:flex items-center gap-4 text-sm">
+       <!-- <nav class="hidden md:flex items-center gap-4 text-sm">
           <Link href="/" class="text-muted-foreground hover:text-primary">Inicio</Link>
           <Link href="/sitemap.xml" class="text-muted-foreground hover:text-primary">Sitemap</Link>
-        </nav>
+        </nav> -->
         <div class="md:hidden flex items-center gap-2">
           <button @click="toggleCompact" class="text-xs px-2 py-1 rounded border">
             {{ compact ? 'Compacto' : 'Normal' }}

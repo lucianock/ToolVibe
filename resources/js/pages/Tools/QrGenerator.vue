@@ -8,22 +8,7 @@
       <div class="absolute top-0 -right-4 w-40 h-40 bg-yellow-300 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-blob animation-delay-2000"></div>
       <div class="absolute -bottom-6 left-20 w-40 h-40 bg-pink-300 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-blob animation-delay-4000"></div>
 
-      <div class="relative py-6">
-        <div class="container mx-auto px-4">
-          <div class="text-center max-w-3xl mx-auto">
-            <div class="inline-flex items-center rounded-full px-3 py-1 text-sm bg-gradient-to-r from-blue-100 to-purple-100 text-blue-800 dark:from-blue-900/50 dark:to-purple-900/50 dark:text-blue-300 mb-6 border border-blue-200/50">
-              Generador de Códigos QR
-            </div>
-            <h1 class="text-2xl lg:text-3xl font-bold mb-2 leading-tight">
-              <span class="bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 bg-clip-text text-transparent">Crea Códigos QR</span>
-              <span class="text-foreground"> en segundos</span>
-            </h1>
-            <p class="text-sm text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
-              Convierte URLs, textos, WiFi y más en códigos QR listos para descargar.
-            </p>
-          </div>
-        </div>
-      </div>
+     
     </section>
 
     <!-- Main Content -->
