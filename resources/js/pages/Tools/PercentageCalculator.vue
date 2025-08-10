@@ -13,15 +13,15 @@
               Selecciona el tipo de cálculo que necesitas
             </CardDescription>
           </CardHeader>
-          <CardContent class="space-y-4">
-            <div class="space-y-4">
+          <CardContent class="card-content-forms">
+            <div class="form-group">
               <!-- Calculation Type -->
-              <div>
-                <Label for="calcType">Tipo de Cálculo</Label>
+              <div class="form-field">
+                <Label for="calcType" class="form-label">Tipo de Cálculo</Label>
                 <select
                   id="calcType"
                   v-model="calcType"
-                  class="w-full rounded-md border border-input bg-background px-3 py-2 ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
+                  class="form-select"
                 >
                   <option value="percentage">Calcular Porcentaje</option>
                   <option value="discount">Calcular Descuento</option>
@@ -33,45 +33,45 @@
               </div>
 
               <!-- Dynamic Form Fields -->
-              <div v-if="calcType === 'percentage'" class="space-y-3">
-                <div>
-                  <Label for="part">Parte</Label>
+              <div v-if="calcType === 'percentage'" class="form-group">
+                <div class="form-field">
+                  <Label for="part" class="form-label">Parte</Label>
                   <input
                     id="part"
                     v-model.number="values.part"
                     type="number"
                     step="0.01"
-                    class="w-full rounded-md border border-input bg-background px-3 py-2 ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
+                    class="form-input"
                     placeholder="Valor de la parte"
                   />
                 </div>
-                <div>
-                  <Label for="total">Total</Label>
+                <div class="form-field">
+                  <Label for="total" class="form-label">Total</Label>
                   <input
                     id="total"
                     v-model.number="values.total"
                     type="number"
                     step="0.01"
-                    class="w-full rounded-md border border-input bg-background px-3 py-2 ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
+                    class="form-input"
                     placeholder="Valor total"
                   />
                 </div>
               </div>
 
-              <div v-if="calcType === 'discount'" class="space-y-3">
-                <div>
-                  <Label for="originalPrice">Precio Original</Label>
+              <div v-if="calcType === 'discount'" class="form-group">
+                <div class="form-field">
+                  <Label for="originalPrice" class="form-label">Precio Original</Label>
                   <input
                     id="originalPrice"
                     v-model.number="values.originalPrice"
                     type="number"
                     step="0.01"
-                    class="w-full rounded-md border border-input bg-background px-3 py-2 ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
+                    class="form-input"
                     placeholder="Precio sin descuento"
                   />
                 </div>
-                <div>
-                  <Label for="discountPercent">Porcentaje de Descuento</Label>
+                <div class="form-field">
+                  <Label for="discountPercent" class="form-label">Porcentaje de Descuento</Label>
                   <input
                     id="discountPercent"
                     v-model.number="values.discountPercent"
@@ -79,121 +79,121 @@
                     step="0.01"
                     min="0"
                     max="100"
-                    class="w-full rounded-md border border-input bg-background px-3 py-2 ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
+                    class="form-input"
                     placeholder="% de descuento"
                   />
                 </div>
               </div>
 
-              <div v-if="calcType === 'increase'" class="space-y-3">
-                <div>
-                  <Label for="originalValue">Valor Original</Label>
+              <div v-if="calcType === 'increase'" class="form-group">
+                <div class="form-field">
+                  <Label for="originalValue" class="form-label">Valor Original</Label>
                   <input
                     id="originalValue"
                     v-model.number="values.originalValue"
                     type="number"
                     step="0.01"
-                    class="w-full rounded-md border border-input bg-background px-3 py-2 ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
+                    class="form-input"
                     placeholder="Valor sin aumento"
                   />
                 </div>
-                <div>
-                  <Label for="increasePercent">Porcentaje de Aumento</Label>
+                <div class="form-field">
+                  <Label for="increasePercent" class="form-label">Porcentaje de Aumento</Label>
                   <input
                     id="increasePercent"
                     v-model.number="values.increasePercent"
                     type="number"
                     step="0.01"
                     min="0"
-                    class="w-full rounded-md border border-input bg-background px-3 py-2 ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
+                    class="form-input"
                     placeholder="% de aumento"
                   />
                 </div>
               </div>
 
-              <div v-if="calcType === 'tip'" class="space-y-3">
-                <div>
-                  <Label for="billAmount">Monto de la Cuenta</Label>
+              <div v-if="calcType === 'tip'" class="form-group">
+                <div class="form-field">
+                  <Label for="billAmount" class="form-label">Monto de la Cuenta</Label>
                   <input
                     id="billAmount"
                     v-model.number="values.billAmount"
                     type="number"
                     step="0.01"
-                    class="w-full rounded-md border border-input bg-background px-3 py-2 ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
+                    class="form-input"
                     placeholder="Total de la cuenta"
                   />
                 </div>
-                <div>
-                  <Label for="tipPercent">Porcentaje de Propina</Label>
+                <div class="form-field">
+                  <Label for="tipPercent" class="form-label">Porcentaje de Propina</Label>
                   <input
                     id="tipPercent"
                     v-model.number="values.tipPercent"
                     type="number"
                     step="0.01"
                     min="0"
-                    class="w-full rounded-md border border-input bg-background px-3 py-2 ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
+                    class="form-input"
                     placeholder="% de propina"
                   />
                 </div>
-                <div>
-                  <Label for="peopleCount">Número de Personas</Label>
+                <div class="form-field">
+                  <Label for="peopleCount" class="form-label">Número de Personas</Label>
                   <input
                     id="peopleCount"
                     v-model.number="values.peopleCount"
                     type="number"
                     min="1"
-                    class="w-full rounded-md border border-input bg-background px-3 py-2 ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
+                    class="form-input"
                     placeholder="Cantidad de personas"
                   />
                 </div>
               </div>
 
-              <div v-if="calcType === 'split'" class="space-y-3">
-                <div>
-                  <Label for="totalAmount">Monto Total</Label>
+              <div v-if="calcType === 'split'" class="form-group">
+                <div class="form-field">
+                  <Label for="totalAmount" class="form-label">Monto Total</Label>
                   <input
                     id="totalAmount"
                     v-model.number="values.totalAmount"
                     type="number"
                     step="0.01"
-                    class="w-full rounded-md border border-input bg-background px-3 py-2 ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
+                    class="form-input"
                     placeholder="Total a dividir"
                   />
                 </div>
-                <div>
-                  <Label for="splitCount">Número de Personas</Label>
+                <div class="form-field">
+                  <Label for="splitCount" class="form-label">Número de Personas</Label>
                   <input
                     id="splitCount"
                     v-model.number="values.splitCount"
                     type="number"
                     min="1"
-                    class="w-full rounded-md border border-input bg-background px-3 py-2 ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
+                    class="form-input"
                     placeholder="Cantidad de personas"
                   />
                 </div>
               </div>
 
-              <div v-if="calcType === 'tax'" class="space-y-3">
-                <div>
-                  <Label for="subtotal">Subtotal</Label>
+              <div v-if="calcType === 'tax'" class="form-group">
+                <div class="form-field">
+                  <Label for="subtotal" class="form-label">Subtotal</Label>
                   <input
                     id="subtotal"
                     v-model.number="values.subtotal"
                     type="number"
                     step="0.01"
-                    class="w-full rounded-md border border-input bg-background px-3 py-2 ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
+                    class="form-input"
                     placeholder="Subtotal sin impuestos"
                   />
                 </div>
-                <div>
-                  <Label for="taxRate">Tasa de Impuesto (%)</Label>
+                <div class="form-field">
+                  <Label for="taxRate" class="form-label">Tasa de Impuesto (%)</Label>
                   <input
                     id="taxRate"
                     v-model.number="values.taxRate"
                     type="number"
                     step="0.01"
                     min="0"
-                    class="w-full rounded-md border border-input bg-background px-3 py-2 ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
+                    class="form-input"
                     placeholder="% de impuesto"
                   />
                 </div>

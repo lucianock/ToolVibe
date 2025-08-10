@@ -70,7 +70,7 @@
 
     <footer class="border-t mt-8">
       <div class="container mx-auto px-4 py-6">
-        <div class="text-center text-muted-foreground text-xs">© 2024 ToolVibe</div>
+        <div class="text-center text-muted-foreground text-xs">© 2025 ToolVibe</div>
       </div>
     </footer>
   </div>
