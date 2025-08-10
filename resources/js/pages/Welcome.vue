@@ -187,7 +187,7 @@ defineProps<{
                         <div class="group">
                             <Button asChild variant="outline" size="lg" class="w-full h-32 bg-gradient-to-br from-blue-50 to-blue-100 dark:from-blue-900/20 dark:to-blue-800/20 border-2 border-blue-200 dark:border-blue-700 text-blue-700 dark:text-blue-300 hover:bg-gradient-to-br hover:from-blue-100 hover:to-blue-200 dark:hover:from-blue-800/30 dark:hover:to-blue-700/30 hover:border-blue-300 dark:hover:border-blue-600 hover:text-blue-800 dark:hover:text-blue-200 transition-all duration-300 px-6 py-4 rounded-2xl shadow-lg hover:shadow-xl hover:scale-105 transform">
                                 <Link href="/tools/qr" class="flex flex-col items-center justify-center h-full">
-                                    <div class="w-12 h-12 bg-gradient-to-br from-blue-500 to-blue-600 rounded-xl flex items-center justify-center mb-3 group-hover:scale-110 transition-transform duration-300">
+                                    <div class="w-12 h-12 bg-gradient-to-br from-blue-500 to-blue-600 rounded-xl flex items-center justify-center mb-2 group-hover:scale-110 transition-transform duration-300">
                                         <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v1m6 11h2m-6 0h-2v4m0-11v3m0 0h.01M12 12h4.01M12 12h-3.99M12 12V8.01"/>
                                         </svg>
@@ -202,7 +202,7 @@ defineProps<{
                         <div class="group">
                             <Button asChild variant="outline" size="lg" class="w-full h-32 bg-gradient-to-br from-green-50 to-green-100 dark:from-green-900/20 dark:to-green-800/20 border-2 border-green-200 dark:border-green-700 text-green-700 dark:text-green-300 hover:bg-gradient-to-br hover:from-green-100 hover:to-green-200 dark:hover:from-green-800/30 dark:hover:to-green-700/30 hover:border-green-300 dark:hover:border-green-600 hover:text-green-800 dark:hover:text-green-200 transition-all duration-300 px-6 py-4 rounded-2xl shadow-lg hover:shadow-xl hover:scale-105 transform">
                                 <Link href="/tools/bmi" class="flex flex-col items-center justify-center h-full">
-                                    <div class="w-12 h-12 bg-gradient-to-br from-green-500 to-green-600 rounded-xl flex items-center justify-center mb-3 group-hover:scale-110 transition-transform duration-300">
+                                    <div class="w-12 h-12 bg-gradient-to-br from-green-500 to-green-600 rounded-xl flex items-center justify-center mb-2 group-hover:scale-110 transition-transform duration-300">
                                         <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z"/>
                                         </svg>
@@ -217,7 +217,7 @@ defineProps<{
                         <div class="group">
                             <Button asChild variant="outline" size="lg" class="w-full h-32 bg-gradient-to-br from-purple-50 to-purple-100 dark:from-purple-900/20 dark:to-purple-800/20 border-2 border-purple-200 dark:border-purple-700 text-purple-700 dark:text-purple-300 hover:bg-gradient-to-br hover:from-purple-100 hover:to-purple-200 dark:hover:from-purple-800/30 dark:hover:to-purple-700/30 hover:border-purple-300 dark:hover:border-purple-600 hover:text-purple-800 dark:hover:text-purple-200 transition-all duration-300 px-6 py-4 rounded-2xl shadow-lg hover:shadow-xl hover:scale-105 transform">
                                 <Link href="/tools/date-calculator" class="flex flex-col items-center justify-center h-full">
-                                    <div class="w-12 h-12 bg-gradient-to-br from-purple-500 to-purple-600 rounded-xl flex items-center justify-center mb-3 group-hover:scale-110 transition-transform duration-300">
+                                    <div class="w-12 h-12 bg-gradient-to-br from-purple-500 to-purple-600 rounded-xl flex items-center justify-center mb-2 group-hover:scale-110 transition-transform duration-300">
                                         <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/>
                                         </svg>
@@ -232,7 +232,7 @@ defineProps<{
                         <div class="group">
                             <Button asChild variant="outline" size="lg" class="w-full h-32 bg-gradient-to-br from-pink-50 to-pink-100 dark:from-pink-900/20 dark:to-pink-800/20 border-2 border-pink-200 dark:border-pink-700 text-pink-700 dark:text-pink-300 hover:bg-gradient-to-br hover:from-pink-100 hover:to-pink-200 dark:hover:from-pink-800/30 dark:hover:to-pink-700/30 hover:border-pink-300 dark:hover:border-pink-600 hover:text-pink-800 dark:hover:text-pink-200 transition-all duration-300 px-6 py-4 rounded-2xl shadow-lg hover:shadow-xl hover:scale-105 transform">
                                 <Link href="/tools/password-generator" class="flex flex-col items-center justify-center h-full">
-                                    <div class="w-12 h-12 bg-gradient-to-br from-pink-500 to-pink-600 rounded-xl flex items-center justify-center mb-3 group-hover:scale-110 transition-transform duration-300">
+                                    <div class="w-12 h-12 bg-gradient-to-br from-pink-500 to-pink-600 rounded-xl flex items-center justify-center mb-2 group-hover:scale-110 transition-transform duration-300">
                                         <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v6a2 2 0 00-2-2H6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/>
                                         </svg>
@@ -252,7 +252,7 @@ defineProps<{
                                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/>
                                         </svg>
                                     </div>
-                                    <span class="font-semibold text-lg">Calculadora de Tiempo</span>
+                                    <span class="font-semibold text-base">Calculadora de Tiempo</span>
                                     <span class="text-sm text-orange-600 dark:text-orange-400 mt-1">Gestión temporal</span>
                                 </Link>
                             </Button>
@@ -267,7 +267,7 @@ defineProps<{
                                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01"/>
                                         </svg>
                                     </div>
-                                    <span class="font-semibold text-lg">Generador de Colores</span>
+                                    <span class="font-semibold text-base">Generador de Colores</span>
                                     <span class="text-sm text-indigo-600 dark:text-indigo-400 mt-1">Paletas creativas</span>
                                 </Link>
                             </Button>
@@ -282,7 +282,7 @@ defineProps<{
                                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z"/>
                                         </svg>
                                     </div>
-                                    <span class="font-semibold text-lg">Calculadora de Porcentajes</span>
+                                    <span class="font-semibold text-base">Calculadora de Porcentajes</span>
                                     <span class="text-sm text-teal-600 dark:text-teal-400 mt-1">Cálculos precisos</span>
                                 </Link>
                             </Button>
@@ -297,7 +297,7 @@ defineProps<{
                                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 9l3 3-3 3m5 0h3M5 20h14a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/>
                                         </svg>
                                     </div>
-                                    <span class="font-semibold text-lg">Convertidor de Unidades</span>
+                                    <span class="font-semibold text-base">Convertidor de Unidades</span>
                                     <span class="text-sm text-amber-600 dark:text-amber-400 mt-1">Conversiones universales</span>
                                 </Link>
                             </Button>
